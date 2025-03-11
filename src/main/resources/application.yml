@@ -1,0 +1,23 @@
+spring:
+  application:
+    name:
+      charger
+
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/charger?serverTimezone=Asia/Seoul
+    username: root
+    password: hee41876455
+
+  #    url: jdbc:mysql://localhost:3306/resume?serverTimezone=Asia/Seoul
+  #    username: spring
+  #    password: hee6455
+  jpa:
+    database: mysql
+    database-platform: org.hibernate.dialect.MySQLDialect
+    show-sql: false
+    hibernate:
+      ddl-auto: create
+    properties:
+      hibernate:
+        format_sql: true
