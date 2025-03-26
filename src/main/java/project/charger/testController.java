@@ -1,4 +1,4 @@
-package project.charger.domain.user.controller;
+package project.charger;
 
 import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Controller;

@@ -1,4 +1,4 @@
-package project.charger.config.filter;
+package project.charger.domain.filter;
 
 import io.jsonwebtoken.Jwts;
 import org.springframework.beans.factory.annotation.Value;

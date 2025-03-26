@@ -1,14 +1,13 @@
-package project.charger.config.filter;
+package project.charger.domain.filter;
 
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import org.apache.tomcat.util.net.openssl.ciphers.Authentication;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.filter.OncePerRequestFilter;
-import project.charger.config.PrincipalDetail;
+import project.charger.domain.config.PrincipalDetail;
 import project.charger.domain.user.entity.User;
 
 import java.io.IOException;
