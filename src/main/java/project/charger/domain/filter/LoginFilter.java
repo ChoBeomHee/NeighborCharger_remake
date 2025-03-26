@@ -1,4 +1,4 @@
-package project.charger.config.filter;
+package project.charger.domain.filter;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import jakarta.servlet.FilterChain;
@@ -9,10 +9,8 @@ import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.AuthenticationException;
-import org.springframework.security.core.context.SecurityContextHolder;
-import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
-import project.charger.config.PrincipalDetail;
+import project.charger.domain.config.PrincipalDetail;
 
 import java.io.IOException;
 import java.util.Map;
@@ -56,7 +54,7 @@ public class LoginFilter extends UsernamePasswordAuthenticationFilter {
         PrincipalDetail principalDetail = (PrincipalDetail) authResult.getPrincipal();
 
         String username = principalDetail.getUsername();
-        String token = jwtUtil.createJwt(username, "USER", 60*60*10L);
+        String token = jwtUtil.createJwt(username, "USER", 60*60*1000L);
 
         response.setHeader("Authorization", "Bearer " + token);
     }

@@ -1,4 +1,4 @@
-package project.charger.config;
+package project.charger.domain.config;
 
 import lombok.Data;
 import org.springframework.security.core.GrantedAuthority;

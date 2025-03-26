@@ -1,4 +1,4 @@
-package project.charger.config;
+package project.charger.domain.config;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.security.core.userdetails.UserDetails;
