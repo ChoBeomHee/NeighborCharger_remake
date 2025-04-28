@@ -27,15 +27,15 @@ public class BatchScheduler {
         this.jobRegistry = jobRegistry;
     }
 
-    @Scheduled(cron = "0/10 * * * * *") // 10초마다 실행
+    @Scheduled(cron = "0/60 * * * * *") // 초마다 실행
     public void runJob() throws Exception {
         String time = LocalDateTime.now().toString();
         try {
-            Job job = jobRegistry.getJob("testJob"); // job 이름
+            Job job = jobRegistry.getJob("updatePublicChargeStepJob"); // job 이름
             JobParametersBuilder jobParam = new JobParametersBuilder().addString("time", time);
             jobLauncher.run(job, jobParam.toJobParameters());
         } catch (Exception e){
-            throw new Exception("배치작업 중 문제 발생");
+            throw new Exception("공용충전기 갱신 배치작업 중 문제 발생");
         }
     }
 }

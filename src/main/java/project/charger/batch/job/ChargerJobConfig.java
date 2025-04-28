@@ -20,8 +20,8 @@ public class ChargerJobConfig {
 
     @Bean
     public Job testJob(JobRepository jobRepository, PlatformTransactionManager transactionManager) throws DuplicateJobException {
-        return new JobBuilder("testJob",jobRepository)
-                .start(chargerStepConfig.testStep(jobRepository, transactionManager))
+        return new JobBuilder("updatePublicChargeStepJob",jobRepository)
+                .start(chargerStepConfig.updatePublicChargeStep(jobRepository, transactionManager))
                 .build();
     }
 }
